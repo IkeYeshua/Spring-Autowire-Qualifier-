@@ -9,9 +9,14 @@
 
    <context:annotation-config/>
 
-   <bean id="heart" class="autowired.Heart"> </bean>
-<bean id = "human" class = "autowired.Human" >
+   <bean id="heart" class="autowired.Heart">
+      <property name="nameOfHeart" value="human"/>
+      <property name="noOfHeart" value="1"/> </bean>
 
-</bean>
+   <bean id="octopusHeart" class="autowired.Heart">
+      <property name="nameOfHeart" value="Octopus"/>
+      <property name="noOfHeart" value="3"/> </bean>
+
+<bean id = "human" class = "autowired.Human" > </bean>
 
 </beans>

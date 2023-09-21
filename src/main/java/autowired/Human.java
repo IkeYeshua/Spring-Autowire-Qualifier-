@@ -1,16 +1,18 @@
 package autowired;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Human {
     private Heart heart;
 
 
     public Human(){}
-@Autowired
+
    public Human(Heart heart) {
       this.heart = heart;}
-
+@Autowired
+@Qualifier("octopusHeart")
     public void setHeart(Heart heart) {
         this.heart = heart;
     }
@@ -19,8 +21,10 @@ public class Human {
 
         if (heart != null) {
             heart.pump();
+            System.out.println("The name of the heart is: " + heart.getNameOfHeart() +
+                    " and the value of the human heart is: " + heart.getNoOfHeart());
         }else {
-            System.out.println("You are dead");
+             System.out.println("You are dead");
         }
     }
 }
